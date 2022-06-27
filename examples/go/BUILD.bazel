@@ -1,0 +1,22 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+load("@bazoku//:bazoku.bzl", "bazoku")
+
+go_binary(
+    name = "go",
+    srcs = ["main.go"],
+    deps = [
+        "@github_com_gorilla_mux//:mux",
+    ],
+)
+
+# bazel + heroku = bazoku (launching bazel targets into heroku)
+bazoku(
+    name = "bazoku-deployment",
+    binary = ":go",
+    heroku_app_name = "my-app-name-123",
+)

@@ -1,0 +1,22 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+
+load("@python_deps//:requirements.bzl", "requirement")
+load("@bazoku//:bazoku.bzl", "bazoku")
+
+py_binary(
+  name = "python",
+  srcs = ["python.py"],
+  deps = [
+    requirement("Flask"),
+  ],
+)
+
+# bazel + heroku = bazoku (launching bazel targets into heroku)
+bazoku(
+    name = "bazoku-deployment",
+    binary = ":python",
+    heroku_app_name = "my-app-name-123",
+)
