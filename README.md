@@ -2,7 +2,7 @@
 
 ## bazel + heroku = bazoku
 
-Bazoku brings Heroku deployments to bazel. We could have called this *rules_heroku* but *bazoku* sounds too much like *bazooka* to turn down. After all, Bazoku literally launches your bazel target into Heroku 🚀.
+Bazoku brings Heroku deployments to bazel. We could have called this *rules_heroku* but *bazoku* sounds too much like *bazooka* to turn down. After all, bazoku literally launches your bazel target into Heroku 🚀.
 
 ## Supported Languages
 
@@ -20,7 +20,7 @@ All of the languages we have tested can be seen in the [examples](./examples) di
 
 ### WORKSPACE File
 
-Adding the following to your Bazel WORKSPACE file will fetch `bazoku` and its dependencies.
+Adding the following to your Bazel `WORKSPACE` file will fetch `bazoku` and its dependencies:
 
 ```
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
