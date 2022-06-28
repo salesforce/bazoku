@@ -48,7 +48,7 @@ go_binary(
 
 bazoku(
     name = "bazoku-deployment",
-    heroku_app_name = "thawing-dawn-07697",
+    heroku_app_name = "my-heroku-app-name-123",
     binary = ":example"
 )
 ```

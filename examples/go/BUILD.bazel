@@ -18,5 +18,5 @@ go_binary(
 bazoku(
     name = "bazoku-deployment",
     binary = ":go",
-    heroku_app_name = "my-app-name-123",
+    heroku_app_name = "my-heroku-app-name-123",
 )

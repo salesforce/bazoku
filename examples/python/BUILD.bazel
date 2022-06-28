@@ -18,5 +18,5 @@ py_binary(
 bazoku(
     name = "bazoku-deployment",
     binary = ":python",
-    heroku_app_name = "my-app-name-123",
+    heroku_app_name = "my-heroku-app-name-123",
 )
