@@ -2,7 +2,7 @@
 
 ## bazel + heroku = bazoku
 
-Bazoku brings Heroku deployments to bazel. We could have called this *rules_heroku* but *bazoku* sounds too much like *bazooka* to turn down. After all, Bazoku literally launches your bazel target into Heroku 🚀.
+Bazoku brings Heroku deployments to bazel. We could have called this *rules_heroku* but *bazoku* sounds too much like *bazooka* to turn down. After all, bazoku literally launches your bazel target into Heroku 🚀.
 
 ## Supported Languages
 
@@ -11,10 +11,29 @@ All of the languages we have tested can be seen in the [examples](./examples) di
 - [Go](./examples/go/BUILD.bazel)
 - [Python](./examples/python/BUILD.bazel)
 
-## Prerequisites
+## Setup
+
+### Prerequisites
 
 - `git` CLI available.
 - Existing app created in Heroku.
+
+### WORKSPACE File
+
+Adding the following to your Bazel `WORKSPACE` file will fetch `bazoku` and its dependencies:
+
+```
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "bazoku",
+    sha256 = "f76a15b5c2e0b2674397d7651064f1322d8a364d743f8f2ca23e9864551f468c",
+    urls = ["https://github.com/salesforce/bazoku/releases/download/v0.0.1/bazoku-v0.0.1.tar.gz"],
+)
+
+load("@bazoku//tools:deps.bzl", "bazoku_deps")
+bazoku_deps()
+```
 
 ## Usage
 
