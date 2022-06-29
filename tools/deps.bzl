@@ -15,7 +15,7 @@ def bazoku_deps():
 
     http_archive(
         name = "heroku_linux",
-        sha256 = "d96f75059a195226a36a8bd367e0422106f9051e229773dad07d2c9adabd5e68",
+        sha256 = "f9259fee83378afc708e9d0b8d8b2b4602bed2240453338a59e53a0abb5df25f",
         urls = [ "https://github.com/salesforce/bazoku/releases/download/v0.1.0/heroku-7.60.2-linux-x64.tar.gz" ],
         build_file_content = """exports_files(glob(["**/*"]))""",
     )
