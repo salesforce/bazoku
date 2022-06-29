@@ -69,7 +69,15 @@ bazel run python:bazoku-deployment
 
 ## Authentication
 
-The heroku CLI checks for valid authentication in the `.netrc` file ([see details](https://devcenter.heroku.com/articles/authentication#api-token-storage)). That means that if you already have valid credentials there, bazoku does not require any extra authentication to heroku. If there are no heroku credentials in your `.netrc` file, bazoku will prompt you to follow the Heroku authentication flow.
+### Interactive
+
+If the non-interactive methods (below) are not provided, the heroku CLI will prompt for credentials.
+
+### Non-Interactive (CI)
+
+- The Heroku CLI checks for valid authentication in the `.netrc` file ([see details](https://devcenter.heroku.com/articles/authentication#api-token-storage)). That means that if there are valid credentials there, bazoku does not require any interactive authentication to heroku.
+
+- The Heroku CLI also checks for the presence of the `HEROKU_API_KEY` environment variable. If a Heroku API key is set, the CLI will read the value & won't prompt for credentials.
 
 ## Disclaimers
 
