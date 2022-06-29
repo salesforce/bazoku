@@ -8,21 +8,15 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 def bazoku_deps():
     http_archive(
         name = "heroku_darwin",
-        # TODO: we need to pin to a version, otherwise the sha would fail eventually..
-        # can't find pinned versions hosted anywhere, need to ask around.
-        # that's why the SHA is commented out..
-        # sha256 = "d96f75059a195226a36a8bd367e0422106f9051e229773dad07d2c9adabd5e68",
-        urls = [ "https://cli-assets.heroku.com/heroku-darwin-x64.tar.gz" ],
+        sha256 = "d96f75059a195226a36a8bd367e0422106f9051e229773dad07d2c9adabd5e68",
+        urls = [ "https://github.com/salesforce/bazoku/releases/download/v0.1.0/heroku-7.60.2-darwin-x64.tar.gz" ],
         build_file_content = """exports_files(glob(["**/*"]))""",
     )
 
     http_archive(
         name = "heroku_linux",
-        # TODO: we need to pin to a version, otherwise the sha would fail eventually..
-        # can't find pinned versions hosted anywhere, need to ask around.
-        # that's why the SHA is commented out..
-        # sha256 = "d96f75059a195226a36a8bd367e0422106f9051e229773dad07d2c9adabd5e68",
-        urls = [ "https://cli-assets.heroku.com/heroku-linux-x64.tar.gz" ],
+        sha256 = "f9259fee83378afc708e9d0b8d8b2b4602bed2240453338a59e53a0abb5df25f",
+        urls = [ "https://github.com/salesforce/bazoku/releases/download/v0.1.0/heroku-7.60.2-linux-x64.tar.gz" ],
         build_file_content = """exports_files(glob(["**/*"]))""",
     )
 
