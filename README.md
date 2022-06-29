@@ -27,8 +27,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "bazoku",
-    sha256 = "65c8d074f4aa0b0604142ce540d0d8383c3781f7609ac490bd7b4023e75b48f8",
-    urls = ["https://github.com/salesforce/bazoku/releases/download/v0.1.0/bazoku-v0.1.0.tar.gz"],
+    sha256 = "bb12e93d3319c670427decaa2240e1c2afc3e09ffd179bf4e11210313b9be6ba",
+    urls = ["https://github.com/salesforce/bazoku/releases/download/v0.2.0/bazoku-v0.2.0.tar.gz"],
 )
 
 load("@bazoku//tools:deps.bzl", "bazoku_deps")
