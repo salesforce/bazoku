@@ -68,7 +68,7 @@ def _bazoku_impl(ctx):
     git add . # TODO: try and restrict this a little. Maybe it's no possible due to deps etc..
     git commit -m --allow-empty &> /dev/null
     echo $spacer
-    git push heroku $(git rev-parse --abbrev-ref HEAD):main -f
+    git push heroku $(git rev-parse --abbrev-ref HEAD):main -f --quiet
     cd $runfile_path
     rm -rf /tmp/bazoku
     """.format(heroku_cli.short_path, ctx.attr.heroku_app_name, binary.short_path)
